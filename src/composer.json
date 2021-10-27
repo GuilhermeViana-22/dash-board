@@ -1,0 +1,16 @@
+{
+    "name": "rian/src",
+    "authors": [
+        {
+            "name": "riancarlosdev",
+            "email": "riancontatoprofissional@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "../app/",
+            "Src\\": "../src/"
+        }
+    }
+}
