@@ -38,6 +38,11 @@ class ClassRender
         include_once(DIRREQ . "/app/view/Layout.php");
     }
 
+    public function renderLayoutPainel()
+    {
+        include_once(DIRREQ . "/app/view/LayoutPainel.php");
+    }
+
     /**
      * adiciona caracteristicas ao head
      *
@@ -83,6 +88,13 @@ class ClassRender
     {
         if (file_exists(DIRREQ . "/app/view/{$this->getDiretorio()}/Footer.php")) {
             include(DIRREQ . "/app/view/{$this->getDiretorio()}/Footer.php");
+        }
+    }
+
+    public function addLayoutCompleto()
+    {
+        if (file_exists(DIRREQ . "/app/view/{$this->getDiretorio()}/Painel.php")) {
+            include(DIRREQ . "/app/view/{$this->getDiretorio()}/Painel.php");
         }
     }
 }

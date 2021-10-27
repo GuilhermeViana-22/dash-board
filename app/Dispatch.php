@@ -5,7 +5,6 @@ namespace App;
 require_once("../src/vendor/autoload.php");
 require_once("../src/class/ClasseRota.php");
 require_once("../app/controller/ControllerLogin.php");
-require_once("../app/controller/ControllerTeste.php");
 require_once("../app/controller/Controller404.php");
 require_once("../app/controller/ControllerPaginaBloqueada.php");
 require_once("../app/controller/ControllerSelect.php");

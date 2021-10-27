@@ -23,8 +23,6 @@ class ClassRota
         $this->rota = [
             "" => "ControllerLogin",
             "login" => "ControllerLogin",
-            "teste" => "ControllerTeste",
-            "teste2" => "ControllerTeste2",
             "loginuser" => "ControllerSelect",
             "painel" => "ControllerPainelHome"
         ];

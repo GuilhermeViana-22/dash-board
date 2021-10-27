@@ -20,7 +20,7 @@ class ControllerLogin extends ClassRender implements InterfaceView
         session_start();
         if (isset($_SESSION['login'])) {
             if ($_SESSION['login']['STATUS'] == true) {
-                header('Location: ' . DIRPAGE . 'arena-cup/painel');
+                header('Location: ' . DIRPAGE . '/painel');
             }
         }
         var_dump($_SESSION);

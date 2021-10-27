@@ -15,6 +15,6 @@ class ControllerPainelHome extends ClassRender implements InterfaceView
     {
         $this->setTitulo("Painel");
         $this->setDiretorio("painel/");
-        $this->renderLayout();
+        $this->renderLayoutPainel();
     }
 }
