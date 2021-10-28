@@ -2,11 +2,27 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: roboto, arial, helvetica, sans-serif;
+    color: #fff;
 }
-
 /*
     Pagina de LOGIN
 */
+i{
+  font-size: 20pt;
+  margin-left: 190px;
+  margin-right: auto;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+h1{
+   margin-right: 50px;
+   font-size: 34pt;
+   max-width: 600px;
+   color: #fff;
+
+    
+}
 
 #session_login {
     width: 100%;
@@ -14,35 +30,68 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background: rgb(19, 19, 22);
+    background: linear-gradient(128deg, rgb(1, 19, 24) 50%, rgba(18,18,20,1) 51%);
 }
 
 #login_form {
-    height: 100px;
-    background-color: rgba(114, 114, 114, 0.199);
+    width: 400px;
+    height: auto;
+    background-color: #041b2e;
+    border-radius: 20px;
+    box-shadow: 10px 5px 10px 2px #000;
 }
 
-#login_form > form {
+label {
+    font-weight: border;
+    text-transform: uppercase;
+    font-size: 18pt;
+    text-align: center;
+}
+
+input {
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 5px;
+    outline: none;
+    border: none;
+    background-color: #03101b;
+    margin-top: 25px;
+}
+
+input:hover{
+    border: 1px solid rgb(0, 153, 255);
+}
+
+input::placeholder {
+    text-align: center;
+}
+
+a{
+   text-align: center;    
+   margin-top: 15px;
+}
+button {
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: 25px;
+    margin-bottom: 15px;
+    background: rgb(28, 198, 242);
+    background: linear-gradient(176deg, rgba(28, 198, 242, 1) 0%, rgba(3, 144, 181, 1) 100%);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#login_form>form {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     height: 100%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*
     Pagina Paginel Home

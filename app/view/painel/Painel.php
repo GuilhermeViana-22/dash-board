@@ -1,12 +1,5 @@
-<?php
-
-/**
- * 
- * aqui esta a pagina painel
- * 
- */
-
-?>
-
-
-Pagina painel
+<header>
+    <nav>
+        <div>logout</div>
+    </nav>
+</header>

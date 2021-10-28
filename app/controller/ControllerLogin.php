@@ -23,6 +23,5 @@ class ControllerLogin extends ClassRender implements InterfaceView
                 header('Location: ' . DIRPAGE . '/painel');
             }
         }
-        var_dump($_SESSION);
     }
 }
