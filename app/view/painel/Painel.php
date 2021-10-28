@@ -1,5 +1,3 @@
-<header>
-    <nav>
+ <nav>
         <div>logout</div>
-    </nav>
-</header>
+</nav>
