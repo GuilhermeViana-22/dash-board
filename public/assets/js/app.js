@@ -3,8 +3,6 @@ const formLogin = $('#form_login')[0]
 const emailInput = $("#input_email_login")[0]
 const senhaInput = $("#input_senha_login")[0]
 
-emailInput.focus()
-
 if (formLogin !== null) {
     $(formLogin).submit((e) => {
         e.preventDefault()

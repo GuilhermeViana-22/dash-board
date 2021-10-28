@@ -93,8 +93,8 @@ class ClassRender
 
     public function addLayoutCompleto()
     {
-        if (file_exists(DIRREQ . "/app/view/{$this->getDiretorio()}/Painel.php")) {
-            include(DIRREQ . "/app/view/{$this->getDiretorio()}/Painel.php");
+        if (file_exists(DIRREQ . "/app/view/{$this->getDiretorio()}/Index.php")) {
+            include(DIRREQ . "/app/view/{$this->getDiretorio()}/Index.php");
         }
     }
 }
