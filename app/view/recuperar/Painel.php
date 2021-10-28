@@ -1,3 +1,1 @@
-<?php
-echo "painel recuperar senha";
-?>
+<b>Esta e a pagina do panel dash - board</b>
