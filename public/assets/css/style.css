@@ -64,7 +64,7 @@ input {
     padding: 5px;
     outline: none;
     border: none;
-    background-color: #03101b;
+    background-color: #e2f1ff;
     margin-top: 25px;
 }
 
@@ -75,7 +75,7 @@ input:hover {
 
 input::placeholder {
 
-    text-align: center;
+   padding: 5px;
 }
 
 a {
@@ -87,7 +87,7 @@ a {
 button {
 
     width: 150px;
-    height: 40px;
+    height: 45px;
     border-radius: 20px;
     margin-top: 25px;
     margin-bottom: 15px;
