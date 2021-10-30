@@ -12,6 +12,7 @@ require_once("../app/controller/ControllerPainelHome.php");
 require_once("../app/controller/ControllerRecuperar.php");
 require_once("../app/controller/ControllerSelectR.php");
 require_once("../app/controller/ControllerLogout.php");
+require_once("../app/controller/ControllerSelectRP.php");
 
 use Src\Class\ClassRota;
 

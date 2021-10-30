@@ -18,7 +18,7 @@ $.ajax({
                 </div>
     
                 <div class="box_ver_link">
-                    <a href="">Ver Link</a>
+                    <a href="http://localhost/dash-board/read-where/selecionarCor/${element.nome}">Ver Link</a>
                 </div>
             </div>
             <div class="box_bottom_info_cor">

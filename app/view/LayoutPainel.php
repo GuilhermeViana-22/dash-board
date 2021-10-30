@@ -11,12 +11,22 @@
 </head>
 
 <body>
+    <div class="container">
+        <div class="content_page">
+            <?php echo $this->addSide(); ?>
+
+            <div class="direita">
+                <?php echo $this->addHeader(); ?>
+                <?php echo $this->addMain(); ?>
+                <?php echo $this->addFooter(); ?>
+            </div>
+        </div>
+    </div>
     <!-- 
         /**
          * Funcao que imprime a view painel ( app/view/painel/Painel.php )
          */
      -->
-    <?php echo $this->addLayoutCompleto(); ?>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="<?php echo DIRJS . 'app.js' ?>"></script>
     <script src="<?php echo DIRJS . 'animaSide.js' ?>"></script>

@@ -20,8 +20,6 @@ class ControllerSelectR extends ClassRender implements InterfaceView
 
     protected $resultados;
     private $methodDeRequisao;
-    private $email;
-    private $senha;
 
     public function __construct()
     {

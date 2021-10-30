@@ -80,6 +80,18 @@ class ClassRender
     }
 
     /**
+     * adiciona conteudo
+     *
+     * @return void
+     */
+    public function addSide()
+    {
+        if (file_exists(DIRREQ . "/app/view/{$this->getDiretorio()}/Side.php")) {
+            include(DIRREQ . "/app/view/{$this->getDiretorio()}/Side.php");
+        }
+    }
+
+    /**
      * adiciona caracteristicas ao footer
      *
      * @return void

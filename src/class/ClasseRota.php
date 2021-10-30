@@ -27,6 +27,7 @@ class ClassRota
             "painel" => "ControllerPainelHome",
             "recuperar" => "ControllerRecuperar",
             "read" => "ControllerSelectR",
+            "read-where" => "ControllerSelectRP",
             "logout" => "ControllerLogout",
             "ops" => "ControllerOps"
         ];

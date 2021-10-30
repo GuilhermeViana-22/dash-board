@@ -57,4 +57,16 @@ class ClassSelect extends ClassConexao
         $this->db = null;
         return $array_return;
     }
+
+    public function selectDadosInner($tabela, $tabela2, $cor)
+    {
+        $this->db = $this->conexaoDb()->prepare("SELECT * FROM `dashboard`.`{$tabela}` as table1 INNER JOIN `dashboard`.{$tabela2} as table2 ON table1.id = table2.cores_id WHERE nome = '{$cor}';");
+        $this->db->execute();
+        $array_return = [];
+        while ($dados = $this->db->fetch(\PDO::FETCH_ASSOC)) {
+            array_push($array_return, $dados);
+        }
+        $this->db = null;
+        return $array_return;
+    }
 }
