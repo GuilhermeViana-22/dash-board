@@ -25,7 +25,10 @@ class ClassRota
             "login" => "ControllerLogin",
             "loginuser" => "ControllerSelect",
             "painel" => "ControllerPainelHome",
-            "recuperar" => "ControllerRecuperar"
+            "recuperar" => "ControllerRecuperar",
+            "read" => "ControllerSelectR",
+            "logout" => "ControllerLogout",
+            "ops" => "ControllerOps"
         ];
 
         if (array_key_exists($this->index, $this->rota)) {

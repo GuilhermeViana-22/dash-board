@@ -10,6 +10,8 @@ require_once("../app/controller/ControllerPaginaBloqueada.php");
 require_once("../app/controller/ControllerSelect.php");
 require_once("../app/controller/ControllerPainelHome.php");
 require_once("../app/controller/ControllerRecuperar.php");
+require_once("../app/controller/ControllerSelectR.php");
+require_once("../app/controller/ControllerLogout.php");
 
 use Src\Class\ClassRota;
 

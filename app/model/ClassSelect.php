@@ -23,9 +23,9 @@ class ClassSelect extends ClassConexao
             $this->db->bindParam(1, $email, \PDO::PARAM_STR);
             $this->db->execute();
             $this->resultado = $this->db->fetch(\PDO::FETCH_ASSOC);
-
             if ($this->resultado == false) {
                 return false;
+                $this->db = null;
             } else {
                 if ($this->resultado['senha'] == $senha) {
                     session_start();
@@ -34,12 +34,27 @@ class ClassSelect extends ClassConexao
                             'STATUS' => true,
                             'NIVEL' => 'admin'
                         ];
+                        $this->db = null;
                         return true;
                     }
                 } else {
+                    $this->db = null;
                     return false;
                 }
             }
+            $this->db = null;
         }
+    }
+
+    public function selectDadosBancoCores($tabela)
+    {
+        $this->db = $this->conexaoDb()->prepare("SELECT * FROM `dashboard`.`{$tabela}`");
+        $this->db->execute();
+        $array_return = [];
+        while ($dados = $this->db->fetch(\PDO::FETCH_ASSOC)) {
+            array_push($array_return, $dados);
+        }
+        $this->db = null;
+        return $array_return;
     }
 }

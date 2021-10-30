@@ -1,3 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
 body {
     background: rgb(53,61,74);
 }
@@ -126,6 +133,201 @@ div {
     height: 85px;
     align-items: center;
     padding: 0 35px;
-    justify-content: space-between;
     position: relative;
+
+    justify-content: flex-end;
+}
+
+.box_perfil_user {
+    display: flex;
+    align-items: center;
+    background: rgb(98, 98, 98);
+    width: 70px;
+    border-radius: 20px 20px 20px 20px;
+
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.box_perfil_user:hover {
+    background: rgba(70, 70, 70, 0.794);
+}
+
+.circle_letra {
+    width: 40px;
+    height: 40px;
+    background: rgb(218, 0, 181);
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle_letra > span {
+    color: #fff;
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.icon_down {
+    margin-left: 8px;
+    font-size: 18px;
+    color: #fff;
+}
+
+.drop_acoes_perfil {
+    position: absolute;
+    top: -10px;
+    width: 150px;
+    height: 80px;
+    right: -60px;
+    background: rgb(98, 98, 98);
+
+    transform: scale(0);
+    transition: .2s ease;
+    opacity: 0;
+}
+
+/*
+    anima drop acoes do perfil do usuario no superior header a direta
+*/
+
+.anima_acao_usuario {
+    top: 50px;
+    opacity: 1;
+    right: 0;
+    transform: scale(1);
+}
+
+
+
+/*      
+        fim animacao
+*/
+
+.lista_acoes_drop_user {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.box_externo_user {
+    position: relative;
+}
+
+.link_sair_acao_user {
+    color: white;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px;
+}
+
+
+/*
+    MAIN
+*/
+
+.container_content_cor {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    padding: 0 25px;
+}
+
+.box_cor {
+    max-width: 300px;
+    min-width: 200px;
+    background: rgba(31, 31, 31, 0.397);
+    height: 350px;
+
+    margin-top: 15px;
+}
+
+.box_cor_top {
+    width: 300px;
+    height: calc(350px - 110px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nome_cor {
+    display: flex;
+}
+
+.nome_cor > span {
+    font-weight: bolder;
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.box_ver_link {
+    margin-top: 15px;
+}
+
+.box_ver_link > a:hover {
+    background: rgb(0, 0, 0);
+    box-shadow: 0 7px 7px rgba(78, 78, 78, 0.603);
+}
+
+.box_ver_link > a{  
+    box-shadow: 0 4px 2px rgba(78, 78, 78, 0.603);
+    transition: .3s ease;
+    padding: 10px 30px;
+    background: rgb(3, 17, 22);
+    color: rgb(199, 199, 199);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+.box_bottom_info_cor {
+    width: 100%;
+    height: 110px;
+    display: flex;
+    background:#1d242c;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.box_valor_info_bottom {
+    min-width: 20px;
+    height: 20px;
+    display: flex;
+    grid-column: 100px 10px;
+    justify-content: center;
+    align-items: center;
+    background: rgb(255, 255, 255);
+    padding: 0 5px;
+    font-weight: bolder;
+
+    color: rgb(59, 59, 59);
+}
+
+.box_info_bottom_cor {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 3px 0;
+}
+
+.box_info_bottom_cor > span {
+    color: rgb(233, 233, 233);
+}
+
+.main_footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
