@@ -29,3 +29,6 @@ if (formLogin !== null) {
         })
     })
 }
+
+
+console.log('teste')
