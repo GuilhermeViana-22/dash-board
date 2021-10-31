@@ -26,12 +26,12 @@ class ControllerPhpMailer
             $this->mail->isSMTP();
             $this->mail->Host       = 'smtp.gmail.com';
             $this->mail->SMTPAuth   = true;
-            $this->mail->Username   = 'i007rian@gmail.com';
-            $this->mail->Password   = "86042781sa";
+            $this->mail->Username   = 'gguicido.viana@gmail.com';
+            $this->mail->Password   = "1Marmaduki";
             $this->mail->Port       = 587;
 
-            $this->mail->setFrom('i007rian@gmail.com');
-            $this->mail->addAddress('gguicido.viana@gmail.com');
+            $this->mail->setFrom('gguicido.viana@gmail.com');
+            $this->mail->addAddress('i007rian@gmail.com');
 
             $this->mail->isHTML(true);
             $this->mail->Subject = 'Here is the subject';

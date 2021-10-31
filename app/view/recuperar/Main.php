@@ -9,11 +9,28 @@
                 <h4>Lhe enviaremos um e-mail com um código para você redefinir sua senha</h4>
                 <div class="inputs">
                     <input autocomplete="off" type="email" placeholder="Email" id="input_email_login" name="email"><br>
+                    <div id="newinput">
+
+                    </div>
+
                     <div class="acao_login_box">
-                    <button type="submit">Enviar email</button>
-                </div>
+                        <button id="btnEnviar" onclick="collapse()" type="submit">Enviar</button>
+                    </div>
                 </div>
             </form>
         </div>
     </section>
 </div>
+
+<script>
+    function collapse() {
+        document.getElementById("input_email_login").style.display = "none";
+        var node = document.createElement("input");
+        node.type = "number";
+        node.setAttribute("placeholder", "Digite que foi enviado");
+        var textnode = document.createTextNode('input');
+        node.appendChild(textnode);
+        document.getElementById("newinput").appendChild(node);
+        document.getElementById("btnEnviar").style.display = "none";
+    }
+</script>

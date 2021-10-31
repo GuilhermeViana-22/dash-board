@@ -123,6 +123,7 @@ button:hover {
 .acao_login_box {
     display: flex;
     justify-content: center;
+    
 }
 
 /* Estilos da aba de recuperação de senha */
