@@ -36,11 +36,10 @@ class ControllerPhpMailer
             $this->mail->SMTPAuth   = true;                                   //Enable SMTP authentication
             $this->mail->Username   = '6f54f849cc0ccc';                     //SMTP username
             $this->mail->Password   = '20be6f29e79c84';                               //SMTP password
-            $this->mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            //Enable implicit TLS encryption
             $this->mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
             //Recipients
-            $this->mail->setFrom('gguicido.viana@gmail.com');
+            $this->mail->setFrom('gguicido.viana@gmail.com', 'Guilherme');
             $this->mail->addAddress('riancontatoprofissional@gmail.com', 'Rian Carlos');     //Add a recipient
             // $this->mail->addCC('cc@example.com');
             // $this->mail->addBCC('bcc@example.com');
@@ -51,14 +50,13 @@ class ControllerPhpMailer
 
             //Content
             $this->mail->isHTML(true);                                  //Set email format to HTML
-            $this->mail->Subject = 'Here is the subject';
+            $this->mail->Subject = 'Teste';
             $this->mail->Body    = 'This is the HTML message body <b>in bold!</b>';
             $this->mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
             $this->mail->send();
 
             echo 'Message has been sent';
-
         } catch (Exception $e) {
 
             echo $this->mail->ErrorInfo;
