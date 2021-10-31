@@ -1,69 +1,42 @@
 <?php
+//Import PHPMailer classes into the global namespace
+//These must be at the top of your script, not inside a function
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
+//Load Composer's autoloader
+require_once '../../src/vendor/autoload.php';
+require_once("../../src/vendor/phpmailer/phpmailer/src/SMTP.php");
+require_once("../../src/vendor/phpmailer/phpmailer/src/PHPMailer.php");
+require_once("../../src/vendor/phpmailer/phpmailer/src/Exception.php");
 
+//Create an instance; passing `true` enables exceptions
+$mail = new PHPMailer(true);
 
-namespace App\Controller;
+try {
 
-require_once('../../src/vendor/phpmailer/phpmailer/src/PHPMailer.php');
-require_once('../../src/vendor/phpmailer/phpmailer/src/SMTP.php');
-require_once('../../src/vendor/phpmailer/phpmailer/src/Exception.php');
-require_once('../../src/vendor/autoload.php');
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+    $mail->isSMTP();
+    $mail->Host       = 'smtp.gmail.com';
+    $mail->SMTPAuth   = true;
+    $mail->Username   = 'riancontatoprofissional@gmail.com';
+    $mail->Password   = "<senha aqui>";
+    $mail->SMTPSecure = 'TSL';
+    $mail->Port       = 587;
 
+    //Recipients
+    $mail->setFrom('riancontatoprofissional@gmail.com', 'Mailer');
+    $mail->addAddress('riancontatoprofissional@gmail.com', 'Joe User');     //Add a recipient
 
+    //Content
+    $mail->isHTML(true);                                  //Set email format to HTML
+    $mail->Subject = 'Here is the subject';
+    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
-use PhpMailer\PHPMailer\PHPMailer;
-
-use PhpMailer\PHPMailer\SMTP;
-
-use PhpMailer\PHPMailer\Exception;
-
-class ControllerPhpMailer
-{
-
-    protected $mail;
-
-    public function EnviarEmail()
-    {
-
-        $this->mail = new PHPMailer(true);
-
-        try {
-
-            //Server settings
-            $this->mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
-            $this->mail->isSMTP();                                            //Send using SMTP
-            $this->mail->Host       = 'smtp.mailtrap.io';                     //Set the SMTP server to send through
-            $this->mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $this->mail->Username   = '6f54f849cc0ccc';                     //SMTP username
-            $this->mail->Password   = '20be6f29e79c84';                               //SMTP password
-            $this->mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
-
-            //Recipients
-            $this->mail->setFrom('gguicido.viana@gmail.com', 'Guilherme');
-            $this->mail->addAddress('riancontatoprofissional@gmail.com', 'Rian Carlos');     //Add a recipient
-            // $this->mail->addCC('cc@example.com');
-            // $this->mail->addBCC('bcc@example.com');
-
-            //Attachments
-            // $this->mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-            // $this->mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
-
-            //Content
-            $this->mail->isHTML(true);                                  //Set email format to HTML
-            $this->mail->Subject = 'Teste';
-            $this->mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-            $this->mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
-
-            $this->mail->send();
-
-            echo 'Message has been sent';
-        } catch (Exception $e) {
-
-            echo $this->mail->ErrorInfo;
-        }
-    }
+    $mail->send();
+    echo 'Message has been sent';
+} catch (Exception $e) {
+    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
-
-$obj = new ControllerPhpMailer();
-
-$obj->EnviarEmail();
