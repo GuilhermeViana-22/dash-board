@@ -11,6 +11,10 @@ class ComposerStaticInit1a1474d72cffa188b8ad3c737a227ecb
         array (
             'Src\\' => 4,
         ),
+        'P' => 
+        array (
+            'PHPMailer\\PHPMailer\\' => 20,
+        ),
         'A' => 
         array (
             'App\\' => 4,
@@ -21,6 +25,10 @@ class ComposerStaticInit1a1474d72cffa188b8ad3c737a227ecb
         'Src\\' => 
         array (
             0 => __DIR__ . '/../..' . '/',
+        ),
+        'PHPMailer\\PHPMailer\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
         'App\\' => 
         array (

@@ -6,7 +6,8 @@
 
     $obj = new ClassSelect;
 
-   $tabela = $obj->selectDadosBancoCores('azul');
+
+   $tabela = $obj->contarItemsdaTabela('azul');
 
     var_dump($tabela);
     
