@@ -23,10 +23,6 @@ class ControllerSelectRP extends ClassRender implements InterfaceView
     {
         header('content-type: application: json');
 
-        $new = new ClassSelect;
-        $resul = $this->resultado = $new->selectDadosInner('cores', 'dadosCores', $v);
-
-        echo '<h1 style="color: #fff;">Aqui sera renderizado a tabela [' . $v . '] (com paginacao)!';
         $this->setDiretorio('/read-where');
         $this->renderLayoutPainel();
     }
