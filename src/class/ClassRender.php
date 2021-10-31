@@ -4,7 +4,6 @@ namespace Src\Class;
 
 class ClassRender
 {
-
     /**
      * propriedades
      */
@@ -27,7 +26,6 @@ class ClassRender
     {
         return $this->titulo;
     }
-
     /**
      * responsavel por renderizar todo layout
      *
@@ -42,7 +40,6 @@ class ClassRender
     {
         include_once(DIRREQ . "/app/view/LayoutPainel.php");
     }
-
     /**
      * adiciona caracteristicas ao head
      *
@@ -54,7 +51,6 @@ class ClassRender
             include(DIRREQ . "/app/view/{$this->getDiretorio()}/Head.php");
         }
     }
-
     /**
      * adiciona caracteristicas ao header
      *
