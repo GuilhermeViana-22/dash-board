@@ -4,9 +4,7 @@ namespace Src\Class;
 
 class ClassRender
 {
-    /**
-     * propriedades
-     */
+
     private $diretorio;
     private $titulo;
 
@@ -26,11 +24,11 @@ class ClassRender
     {
         return $this->titulo;
     }
-    /**
-     * responsavel por renderizar todo layout
-     *
-     * @return void
-     */
+
+
+
+
+
     public function renderLayout()
     {
         include_once(DIRREQ . "/app/view/Layout.php");
@@ -40,22 +38,14 @@ class ClassRender
     {
         include_once(DIRREQ . "/app/view/LayoutPainel.php");
     }
-    /**
-     * adiciona caracteristicas ao head
-     *
-     * @return void
-     */
+
     public function addHead()
     {
         if (file_exists(DIRREQ . "/app/view/{$this->getDiretorio()}/Head.php")) {
             include(DIRREQ . "/app/view/{$this->getDiretorio()}/Head.php");
         }
     }
-    /**
-     * adiciona caracteristicas ao header
-     *
-     * @return void
-     */
+
     public function addHeader()
     {
         if (file_exists(DIRREQ . "/app/view/{$this->getDiretorio()}/Header.php")) {
@@ -63,11 +53,6 @@ class ClassRender
         }
     }
 
-    /**
-     * adiciona caracteristicas ao main
-     *
-     * @return void
-     */
     public function addMain()
     {
         if (file_exists(DIRREQ . "/app/view/{$this->getDiretorio()}/Main.php")) {
@@ -75,11 +60,6 @@ class ClassRender
         }
     }
 
-    /**
-     * adiciona conteudo
-     *
-     * @return void
-     */
     public function addSide()
     {
         if (file_exists(DIRREQ . "/app/view/{$this->getDiretorio()}/Side.php")) {
@@ -87,11 +67,6 @@ class ClassRender
         }
     }
 
-    /**
-     * adiciona caracteristicas ao footer
-     *
-     * @return void
-     */
     public function addFooter()
     {
         if (file_exists(DIRREQ . "/app/view/{$this->getDiretorio()}/Footer.php")) {

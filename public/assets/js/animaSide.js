@@ -2,8 +2,31 @@ const sideLeft = document.querySelector(".side_left")
 const menuBar = document.querySelector(".menu_bar")
 const titlePage = document.querySelector(".title_page")
 const contentSideMobile = document.querySelector('.content_side_mobile')
+const animaLeft = document.querySelectorAll('.anima_left')
+const animaBottom = document.querySelectorAll('.anima_bottom')
 
 var sideStatus = 0;
+
+animaLeft.forEach(i => {
+    i.classList.add('anima_table')
+})
+
+let nun = 0
+
+if (animaBottom.length !== 0) {
+    const anima = () => {
+        setTimeout(() => {
+            if (nun < 4) {
+                animaBottom[nun].classList.add('bottom_anima')
+                nun++
+                anima()
+            }
+        }, 300)
+    }
+    anima()
+}
+
+
 
 const animacaoSideCompleta = () => {
 
@@ -14,7 +37,7 @@ const animacaoSideCompleta = () => {
             titlePage.classList.add('opacity')
             setTimeout(() => {
                 titlePage.style.display = 'none'
-            }, 400)
+            }, 200)
         }, 0)
 
         setTimeout(() => {

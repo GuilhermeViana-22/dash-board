@@ -1,5 +1,8 @@
 <main>
     <div class="container_tabela">
+        <div class="spinner-box">
+            <div class="three-quarter-spinner"></div>
+        </div>
         <div class="box_tabela">
             <table class="table_table">
                 <tr class="tr_table">
@@ -19,26 +22,6 @@
                     <th class="th_table">comentarios</th>
                     <th class="th_table">status</th>
                     <th class="th_table">excluida</th>
-                </tr>
-                <tr class="tr_table">
-                </tr>
-                <tr class="tr_table">
-                    <td class="td_table">1</td>
-                    <td class="td_table">177.212.25.20</td>
-                    <td class="th_table">10/09/2021</td>
-                    <td class="td_table">Yago vilas</td>
-                    <td class="td_table">4998</td>
-                    <td class="td_table">8</td>
-                    <td class="td_table">Miguel Silas</td>
-                    <td class="td_table">Ferrari Black</td>
-                    <td class="td_table">79,00</td>
-                    <td class="td_table">7,90</td>
-                    <td class="td_table">primeiro</td>
-                    <td class="td_table">linhttp://www.pegae.link/Yago</td>
-                    <td class="td_table">Conferir toda semana</td>
-                    <td class="td_table">...</td>
-                    <td class="td_table">NOVA</td>
-                    <td class="td_table">N</td>
                 </tr>
             </table>
         </div>

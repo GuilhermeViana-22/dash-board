@@ -13,7 +13,7 @@ use Src\Interface\InterfaceView;
 use App\Model\ClassSelect;
 use Src\Trait\TraitClearSanitize;
 
-class ControllerSelectR extends ClassRender implements InterfaceView
+class ControllerSelectCor extends ClassRender implements InterfaceView
 {
 
     use TraitClearSanitize;
@@ -21,21 +21,20 @@ class ControllerSelectR extends ClassRender implements InterfaceView
     protected $resultados;
     private $methodDeRequisao;
 
-    public function __construct()
+    public function cor($token, $cor)
     {
-
         $this->methodDeRequisao = $_SERVER['REQUEST_METHOD'];
 
-        $this->setTitulo("Carregando...");
+        if ($token === $_SESSION['token_hash']) {
+            if ($this->methodDeRequisao === 'GET') {
+                header('Content-Type: application/json');
 
-        if ($this->methodDeRequisao === 'POST') {
-            header('Content-Type: application/json');
-
-            $new = new ClassSelect;
-            $resul = $this->resultado = $new->selectDadosBancoCores('cores');
-            echo json_encode($resul);
-        } else {
-            header("location: " . DIRPAGE . "/ops");
+                $new = new ClassSelect;
+                $resul = $this->resultado = $new->selectDadosBancoCores($cor);
+                echo json_encode($resul);
+            } else {
+                header("location: " . DIRPAGE . "/ops");
+            }
         }
     }
 }

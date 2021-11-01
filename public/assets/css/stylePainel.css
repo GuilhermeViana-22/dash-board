@@ -55,7 +55,7 @@ body {
     transform: translateY(3px);
 }
 
-.title_page > h1 {
+.title_page > a > h1 {
     font-size: 19px;
     font-weight: 600;
     letter-spacing: 1px;
@@ -99,7 +99,7 @@ body {
 */
 
 .transition {
-    transition: .2s ease;
+    transition: .3s ease;
 }
 
 .transition2 {
@@ -240,6 +240,14 @@ div {
     padding: 0 25px;
 }
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
 .box_cor {
     max-width: 300px;
     min-width: 200px;
@@ -247,6 +255,7 @@ div {
     height: 350px;
 
     margin-top: 15px;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.39);
 }
 
 .box_cor_top {

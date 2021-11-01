@@ -15,7 +15,5 @@ class ControllerRecuperar extends ClassRender implements InterfaceView{
         $this->setTitulo("Login");
         $this->setDiretorio("recuperar/");
         $this->renderLayout();
-
     }
 }
-?>

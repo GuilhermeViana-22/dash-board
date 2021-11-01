@@ -28,7 +28,6 @@ class ClassSelect extends ClassConexao
                 $this->db = null;
             } else {
                 if ($this->resultado['senha'] == $senha) {
-                    session_start();
                     if (!isset($_SESSION['login_user'])) {
                         $_SESSION['login'] = [
                             'STATUS' => true,

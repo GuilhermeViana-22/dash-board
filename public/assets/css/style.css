@@ -15,16 +15,29 @@ body {
     background: linear-gradient(128deg, rgb(1, 5, 7) 50%, rgb(2, 14, 14) 50%);
 }
 
+
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
 /*
     Pagina de LOGIN
 */
 i {
     font-size: 20pt;
-    margin-left: 190px;
-    margin-right: auto;
     margin-top: 15px;
     margin-bottom: 15px;
     color: #fff;
+}
+
+.icon_user {
+    display: flex;
+    justify-content: center;
 }
 
 h1 {
@@ -124,6 +137,13 @@ button {
     transition: .4s ease;
 
     font-size: 18px;
+}
+
+
+.input_codigo {
+    text-align: center;
+    letter-spacing: 5px;
+    color: red;
 }
 
 button:hover{

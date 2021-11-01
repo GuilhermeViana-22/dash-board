@@ -7,20 +7,17 @@
         </div>
 
         <div class="title_page transition">
-            <h1>Painel Admin</h1>
+            <a href="<?php echo DIRPAGE . "/painel/home"; ?>" class="link_sair_acao_user">
+                <h1 class="anima_left">Painel Admin</h1>
+            </a>
         </div>
     </div>
 
     <div class="content_side_mobile transition">
         <ul class="list_item">
-            <li class="item_list">item1</li>
-            <li class="item_list">item2</li>
-            <li class="item_list">item3</li>
-            <li class="item_list">item4</li>
-            <li class="item_list">item5</li>
-            <li class="item_list">item6</li>
-            <li class="item_list">item7</li>
-            <li class="item_list">item8</li>
+            <li class="item_list">
+                <a href="<?php echo DIRPAGE . "/logout"; ?>" class="link_sair_acao_user">Sair</a>
+            </li>
         </ul>
     </div>
 </div>

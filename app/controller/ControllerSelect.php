@@ -15,7 +15,6 @@ use Src\Trait\TraitClearSanitize;
 
 class ControllerSelect extends ClassRender implements InterfaceView
 {
-
     use TraitClearSanitize;
 
     protected $resultado;
@@ -25,25 +24,30 @@ class ControllerSelect extends ClassRender implements InterfaceView
 
     public function __construct()
     {
+    }
 
-        $this->methodDeRequisao = $_SERVER['REQUEST_METHOD'];
+    public function verificarUser($token)
+    {
+        if ($token === $_SESSION['token_hash']) {
+            $this->methodDeRequisao = $_SERVER['REQUEST_METHOD'];
 
-        $this->setTitulo("Carregando...");
+            $this->setTitulo("Carregando...");
 
-        if ($this->methodDeRequisao === 'POST') {
-            header('Content-Type: application/json');
-            $this->email = $this->clearString($_POST['email']);
-            $this->senha = $this->clearString($_POST['senha']);
+            if ($this->methodDeRequisao === 'POST') {
+                header('Content-Type: application/json');
+                $this->email = $this->clearString($_POST['email']);
+                $this->senha = $this->clearString($_POST['senha']);
 
-            $new = new ClassSelect;
-            $this->resultado = $new->selectDadosBanco('login', true, $this->email, $this->senha);
-            if ($this->resultado == true) {
-                echo json_encode(true);
+                $new = new ClassSelect;
+                $this->resultado = $new->selectDadosBanco('login', true, $this->email, $this->senha);
+                if ($this->resultado == true) {
+                    echo json_encode(true);
+                } else {
+                    echo json_encode(false);
+                }
             } else {
-                echo json_encode(false);
+                header("location: " . DIRPAGE . "/ops");
             }
-        } else {
-            header("location: " . DIRPAGE . "/ops");
         }
     }
 }

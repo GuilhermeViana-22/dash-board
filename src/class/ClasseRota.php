@@ -26,8 +26,8 @@ class ClassRota
             "loginuser" => "ControllerSelect",
             "painel" => "ControllerPainelHome",
             "recuperar" => "ControllerRecuperar",
-            "read" => "ControllerSelectR",
-            "read-where" => "ControllerSelectRP",
+            "envio-email" => "ControllerPhpMailer",
+            "read" => "ControllerSelectCor",
             "logout" => "ControllerLogout",
             "ops" => "ControllerOps"
         ];
