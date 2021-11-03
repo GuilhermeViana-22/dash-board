@@ -19,7 +19,7 @@ $tabela = $obj->contarItemsdaTabela('azul');
                 </div>
 
                 <div class="box_ver_link">
-                    <a href="http://localhost/dash-board/painel/viewCor/<?php echo $_SESSION['token_hash']; ?>/azul">Ver Link</a>
+                    <a href="http://localhost/dash-board/painel/viewCor/<?php echo $_SESSION['token_hash']; ?>/azul/1">Ver Link</a>
                 </div>
             </div>
             <div class="box_bottom_info_cor">
@@ -56,7 +56,7 @@ $tabela = $obj->contarItemsdaTabela('azul');
                 </div>
 
                 <div class="box_ver_link">
-                    <a href="http://localhost/dash-board/painel/viewCor/<?php echo $_SESSION['token_hash']; ?>/amarela">Ver Link</a>
+                    <a href="http://localhost/dash-board/painel/viewCor/<?php echo $_SESSION['token_hash']; ?>/amarela/1">Ver Link</a>
                 </div>
             </div>
             <div class="box_bottom_info_cor">
@@ -93,7 +93,7 @@ $tabela = $obj->contarItemsdaTabela('azul');
                 </div>
 
                 <div class="box_ver_link">
-                    <a href="http://localhost/dash-board/painel/viewCor/<?php echo $_SESSION['token_hash']; ?>/vermelha">Ver Link</a>
+                    <a href="http://localhost/dash-board/painel/viewCor/<?php echo $_SESSION['token_hash']; ?>/vermelha/1">Ver Link</a>
                 </div>
             </div>
             <div class="box_bottom_info_cor">
@@ -130,7 +130,7 @@ $tabela = $obj->contarItemsdaTabela('azul');
                 </div>
 
                 <div class="box_ver_link">
-                    <a href="http://localhost/dash-board/painel/viewCor/<?php echo $_SESSION['token_hash']; ?>/verde">Ver Link</a>
+                    <a href="http://localhost/dash-board/painel/viewCor/<?php echo $_SESSION['token_hash']; ?>/verde/1">Ver Link</a>
                 </div>
             </div>
             <div class="box_bottom_info_cor">

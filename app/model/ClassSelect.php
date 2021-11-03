@@ -57,6 +57,18 @@ class ClassSelect extends ClassConexao
         return $array_return;
     }
 
+    public function selectDadosBancoCores2($tabela, $inicio, $qntResult)
+    {
+        $this->db = $this->conexaoDb()->prepare("SELECT * FROM `dashboard`.`{$tabela}` LIMIT $inicio, $qntResult");
+        $this->db->execute();
+        $array_return = [];
+        while ($dados = $this->db->fetch(\PDO::FETCH_ASSOC)) {
+            array_push($array_return, $dados);
+        }
+        $this->db = null;
+        return $array_return;
+    }
+
     public function contarItemsdaTabela($tabela)
     {
         $this->db = $this->conexaoDb()->prepare("SELECT COUNT(*) FROM `dashboard`.`{$tabela}`");

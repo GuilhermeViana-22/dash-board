@@ -10,10 +10,8 @@ require_once("../app/controller/Controller404.php");
 require_once("../app/controller/ControllerPaginaBloqueada.php");
 require_once("../app/controller/ControllerSelect.php");
 require_once("../app/controller/ControllerPainelHome.php");
-require_once("../app/controller/ControllerRecuperar.php");
 require_once("../app/controller/ControllerSelectCor.php");
 require_once("../app/controller/ControllerLogout.php");
-require_once("../app/controller/ControllerPhpMailer.php");
 
 use Src\Class\ClassRota;
 

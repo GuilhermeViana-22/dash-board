@@ -43,7 +43,7 @@ class ControllerPainelHome extends ClassRender implements InterfaceView
         }
     }
 
-    public function viewCor($token, $cor)
+    public function viewCor($token, $cor, $page)
     {
         if ($token === $_SESSION['token_hash']) {
             if (isset($_SESSION['login'])) {

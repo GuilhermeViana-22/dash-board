@@ -13,7 +13,6 @@
                     <input autocomplete="off" type="email" placeholder="Email" id="input_email_login" name="email">
                     <div class="box_esque_senha">
                         <input type="password" name="senha" id="input_senha_login" placeholder="Senha">
-                        <a href="<?php echo DIRPAGE . "/recuperar" ?>" class="message">Esqueceu a senha?</a>
                     </div>
                 </div>
 

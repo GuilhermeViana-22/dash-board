@@ -65,7 +65,7 @@ body {
 .side_left {
     background: rgb(61,69,82);
     width: 370px;
-    height: 100vh;
+    height: 100vw;
     box-shadow: 0 8px 10px rgba(54, 54, 54, 0.562);
     z-index: 99999;
 }
@@ -108,6 +108,17 @@ body {
 
 .anima_side {
     width: 73px;
+}
+
+@media screen and (max-width: 450px){
+    
+        .side_left {
+            position: absolute;
+            width: 100vw;
+        }
+    .anima_side {
+        width: 0px;
+    }
 }
 
 .opacity {
@@ -249,7 +260,7 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .box_cor {
-    max-width: 300px;
+    width: 330px;
     min-width: 200px;
     background: rgba(31, 31, 31, 0.397);
     height: 350px;
@@ -259,7 +270,6 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .box_cor_top {
-    width: 300px;
     height: calc(350px - 110px);
     display: flex;
     justify-content: center;

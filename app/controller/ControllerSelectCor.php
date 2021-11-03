@@ -21,7 +21,7 @@ class ControllerSelectCor extends ClassRender implements InterfaceView
     protected $resultados;
     private $methodDeRequisao;
 
-    public function cor($token, $cor)
+    public function cor($token, $cor, $pagina)
     {
         $this->methodDeRequisao = $_SERVER['REQUEST_METHOD'];
 
