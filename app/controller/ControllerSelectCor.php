@@ -37,4 +37,21 @@ class ControllerSelectCor extends ClassRender implements InterfaceView
             }
         }
     }
+
+    public function corWhere($tabela, $token, $id)
+    {
+        $this->methodDeRequisao = $_SERVER['REQUEST_METHOD'];
+
+        if ($token === $_SESSION['token_hash']) {
+            if ($this->methodDeRequisao === 'GET') {
+                header('Content-Type: application/json');
+
+                $new = new ClassSelect;
+                $resul = $this->resultado = $new->selectDadosCorWhere($tabela, $id);
+                echo json_encode($resul);
+            } else {
+                header("location: " . DIRPAGE . "/ops");
+            }
+        }
+    }
 }

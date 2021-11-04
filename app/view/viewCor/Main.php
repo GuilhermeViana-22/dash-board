@@ -13,6 +13,9 @@ $methodDeRequisao = $_SERVER['REQUEST_METHOD'];
 
 $new = new ClassSelect;
 $resul = $resultado = $new->selectDadosBancoCores2($cor, $inicio, $quantidadeResultPorPagina);
+$quantidade = $new->contarItemsdaTabela($cor);
+$quantidadeNum = $quantidade[0]['COUNT(*)'];
+$pg_quantidade = ceil($quantidadeNum / $quantidadeResultPorPagina)
 ?>
 
 
@@ -25,6 +28,7 @@ $resul = $resultado = $new->selectDadosBancoCores2($cor, $inicio, $quantidadeRes
     <div class="container_tabela">
         <div class="box_tabela">
             <div class="title_session">
+                <input class="token_hash" type="text" value="<?php echo $_SESSION['token_hash'] ?>" hidden>
                 <p class="p_title"><?php echo $cor ?></p>
             </div>
 
@@ -40,7 +44,7 @@ $resul = $resultado = $new->selectDadosBancoCores2($cor, $inicio, $quantidadeRes
                     <div class="over_scroll">
                         <table class="table">
                             <tr class="table_top">
-                                <td class="coll_acao">Acao</td>
+                                <td class="coll_acao">Acoes</td>
                                 <td>Gestor</td>
                                 <td>Codigo</td>
                                 <td>Valor</td>
@@ -63,6 +67,9 @@ $resul = $resultado = $new->selectDadosBancoCores2($cor, $inicio, $quantidadeRes
                                             <td>{$value['codigo']}</td>
                                             <td>{$value['valor']}</td>
                                             <td>{$value['inspirado']}</td>
+                                            <td style='display: none;'>
+                                                <input class='value_id' value='{$value['id']}'></input>
+                                            <td>
                                         </tr>
                                     ";
                             }
@@ -73,22 +80,57 @@ $resul = $resultado = $new->selectDadosBancoCores2($cor, $inicio, $quantidadeRes
 
                 <div class="paginacao_php">
                     <div class="container_pg_php">
-                        <a href="" class="link_page pg_um">
-                            <i class="fas icon_page icon_inicio fa-chevron-left"></i>
-                            <i class="fas icon_page icon_inicio fa-chevron-left"></i>
-                        </a>
-                        <a class="link_page box_pages" href="">1</a>
-                        <a class="link_page box_pages" href="">2</a>
-                        <a class="link_page box_pages" href="">3</a>
-                        <a class="link_page box_pages" href="">4</a>
-                        <a class="link_page box_pages" href="">5</a>
-                        <a href="" class="link_page pg_end">
-                            <i class="fas icon_end icon_page fa-chevron-left"></i>
-                            <i class="fas icon_end icon_page fa-chevron-left"></i>
-                        </a>
+                        <?php
+                        $maximo_link = 4;
+                        echo "
+                                <a href='" . DIRPAGE . "/painel/viewCor/{$_SESSION['token_hash']}/$cor/1' class='link_page pg_um'>
+                                    <i class='fas icon_page icon_inicio fa-chevron-left'></i>
+                                    <i class='fas icon_page icon_inicio fa-chevron-left'></i>
+                                </a>
+                            ";
+
+
+                        for ($pag_ant = $paginaAtual - $maximo_link; $pag_ant <= $paginaAtual - 1; $pag_ant++) {
+                            if ($pag_ant >= 1) {
+                                echo "
+                                        <a class='link_page box_pages' href='" . DIRPAGE . "/painel/viewCor/{$_SESSION['token_hash']}/$cor/$pag_ant'>$pag_ant</a>
+                                    ";
+                            }
+                        }
+
+                        echo "
+                                <span class='link_page box_pages' style='background: green;'>$paginaAtual</span>
+                            ";
+
+                        for ($pag_next = $paginaAtual + 1; $pag_next <= $paginaAtual + $maximo_link; $pag_next++) {
+                            if ($pag_next <= $pg_quantidade) {
+                                echo "
+                                    <a class='link_page box_pages' href='" . DIRPAGE . "/painel/viewCor/{$_SESSION['token_hash']}/$cor/$pag_next'>$pag_next</a>
+                                ";
+                            }
+                        }
+
+                        echo "
+                                <a href='" . DIRPAGE . "/painel/viewCor/{$_SESSION['token_hash']}/$cor/{$pg_quantidade}' class='link_page pg_end'>
+                                    <i class='fas icon_end icon_page fa-chevron-left'></i>
+                                    <i class='fas icon_end icon_page fa-chevron-left'></i>
+                                </a>
+                            ";
+                        ?>
                     </div>
                 </div>
+
+                <div class="modal_view">
+                    <div class="top_modal">
+                        <div></div>
+                        <span class="title_modal">Tabela <?php echo $cor ?></span>
+                        <i class="fas icon_exit fa-times"></i>
+                    </div>
+
+                </div>
+
             </div>
+            <div class="exite_page"></div>
         </div>
     </div>
 </main>
